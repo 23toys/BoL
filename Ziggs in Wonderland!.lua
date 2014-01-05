@@ -142,7 +142,7 @@ function OnDraw()
       elseif WAble and Config.drawF then
       DrawCircle(myHero.x, myHero.y, myHero.z, wRange, 0x6600CC)
       elseif EAble and Config.drawF then
-      DrawCircle(myHero.x, myHero.y, myHero.z, ERange, 0x6600CC)
+      DrawCircle(myHero.x, myHero.y, myHero.z, eRange, 0x6600CC)
       end
       if QAble and Config.drawB then
       DrawCircle(myHero.x, myHero.y, myHero.z, bRange, 0x6600CC)
