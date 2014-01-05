@@ -50,7 +50,7 @@ local InterruptList = {
     { charName = "Galio", spellName = "GalioIdolOfDurand"},
     { charName = "Karthus", spellName = "FallenOne"},
     { charName = "Katarina", spellName = "KatarinaR"},
-    { charName = "Lucian", spellName = "LucianR"}
+    { charName = "Lucian", spellName = "LucianR"},
     { charName = "Malzahar", spellName = "AlZaharNetherGrasp"},
     { charName = "MissFortune", spellName = "MissFortuneBulletTime"},
     { charName = "Nunu", spellName = "AbsoluteZero"},
