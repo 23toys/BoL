@@ -1,6 +1,6 @@
 ------#################################################################################------  ------###########################   Ziggs in Wonderland!   ############################------ ------###########################         by Toy           ############################------ ------#################################################################################------
 
---> Version: BETA
+--> Version: BETA 0.04
 
 --> Features:
 --> Prodictions on every skills, they are also casted with packets.
@@ -133,31 +133,31 @@ function OnTick()
        MegaInfernoBomb()
     end
 end
- 
+
 function OnDraw()
-    if not myHero.dead then
+    if not Config.noDraw and not myHero.dead then
       if Config.drawDmg then drawDamage() end
       if QAble and Config.drawF then
-      DrawCircle(myHero.x, myHero.y, myHero.z, bRange, 0x6600CC)
+      DrawCircle(myHero.x, myHero.y, myHero.z, bRange, ARGB(1, 98, 0, 255))
       elseif WAble and Config.drawF then
-      DrawCircle(myHero.x, myHero.y, myHero.z, wRange, 0x6600CC)
+      DrawCircle(myHero.x, myHero.y, myHero.z, wRange, ARGB(1, 98, 0, 255))
       elseif EAble and Config.drawF then
-      DrawCircle(myHero.x, myHero.y, myHero.z, eRange, 0x6600CC)
+      DrawCircle(myHero.x, myHero.y, myHero.z, eRange, ARGB(1, 98, 0, 255))
       end
       if QAble and Config.drawB then
-      DrawCircle(myHero.x, myHero.y, myHero.z, bRange, 0x6600CC)
+      DrawCircle(myHero.x, myHero.y, myHero.z, bRange, ARGB(1, 98, 0, 255))
       end
       if QAble and Config.drawQ then
-      DrawCircle(myHero.x, myHero.y, myHero.z, qRange, 0xFFFFFF)
+      DrawCircle(myHero.x, myHero.y, myHero.z, qRange, ARGB(1, 121, 93, 168))
       end
       if WAble and Config.drawW then
-      DrawCircle(myHero.x, myHero.y, myHero.z, wRange, 0x9933FF)
+      DrawCircle(myHero.x, myHero.y, myHero.z, wRange, ARGB(1, 98, 0, 255))
       end
       if EAble and Config.drawE then
-      DrawCircle(myHero.x, myHero.y, myHero.z, eRange, 0xFF0000)
+      DrawCircle(myHero.x, myHero.y, myHero.z, eRange, ARGB(1, 133, 0, 0))
       end
       if RAble and Config.drawR then
-      DrawCircle(myHero.x, myHero.y, myHero.z, rRange, 0x9933FF)
+      DrawCircle(myHero.x, myHero.y, myHero.z, rRange, ARGB(1, 121, 93, 168))
       end
    end
 end
@@ -188,6 +188,7 @@ end
   Config:addParam("useW2", "Use - Satchel Charge", SCRIPT_PARAM_ONOFF, false)
   Config:addParam("useE2", "Use - Hexplosive Minefield", SCRIPT_PARAM_ONOFF, false)
   Config:addParam("sep", "-- Drawing Options --", SCRIPT_PARAM_INFO, "")
+  Config:addParam("noDraw", "Disable - Drawing", SCRIPT_PARAM_ONOFF, false)
   Config:addParam("drawDmg", "Draw - Damage Marks", SCRIPT_PARAM_ONOFF, true)
   Config:addParam("drawF", "Draw - Furthest Spell Available", SCRIPT_PARAM_ONOFF, true)
   Config:addParam("drawB", "Draw - Bouncing Bomb", SCRIPT_PARAM_ONOFF, false)
