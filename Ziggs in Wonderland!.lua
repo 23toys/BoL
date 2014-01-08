@@ -1,6 +1,6 @@
 ------#################################################################################------  ------###########################   Ziggs in Wonderland!   ############################------ ------###########################         by Toy           ############################------ ------#################################################################################------
 
---> Version: BETA 0.06
+--> Version: BETA 0.07
 
 --> Features:
 --> Prodictions on every skills, they are also casted with packets.
@@ -71,7 +71,7 @@ function OnLoad()
         
         enemyHeroes = GetEnemyHeroes()
         
-        ProdictB = Prodict:AddProdictionObject(_Q, qRange, 1634, 0.22, 180)
+        ProdictB = Prodict:AddProdictionObject(_Q, bRange, 1634, 0.22, 180)
         ProdictQ = Prodict:AddProdictionObject(_Q, qRange, 1734, 0.22, 180)
         ProdictW = Prodict:AddProdictionObject(_W, wRange, 1810, 0.25, 325)     
         ProdictE = Prodict:AddProdictionObject(_E, eRange, 2586, 0.15, 350)
@@ -284,15 +284,15 @@ end
 
 function CastFKS(Unit)
     if QAble and GetDistance(Unit) < qRange and ValidTarget(Unit) then
-        QPos = ProdictR:GetPrediction(Unit)
+        QPos = ProdictQ:GetPrediction(Unit)
         Packet('S_CAST', { spellId = _Q, fromX = QPos.x, fromY = QPos.z}):send()
     end
     if WAble and GetDistance(Unit) < wRange and ValidTarget(Unit) then
-        WPos = ProdictR:GetPrediction(Unit)
+        WPos = ProdictW:GetPrediction(Unit)
         Packet('S_CAST', { spellId = _W, fromX = WPos.x+50, fromY = WPos.z+50}):send()
     end
     if EAble and GetDistance(Unit) < eRange and ValidTarget(Unit) then
-        EPos = ProdictR:GetPrediction(Unit)
+        EPos = ProdictE:GetPrediction(Unit)
         Packet('S_CAST', { spellId = _E, fromX = EPos.x+50, fromY = EPos.z+50}):send()
     end
     if RAble and GetDistance(Unit) < rRange and ValidTarget(Unit) then
