@@ -232,7 +232,7 @@ function Bite()
 end
 
 function Frenzy()
-				if WAble and AutoCarry.PluginMenu.useWs and GetDistance(Target) <= 150 then
+				if WAble and AutoCarry.PluginMenu.useWs and GetDistance(Target) <= 200 then
 				CastSpell(_W) end
 end
 
