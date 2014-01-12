@@ -1,6 +1,6 @@
 ------#################################################################################------  ------##########################      Victorious Elise      ###########################------ ------##########################           by Toy           ###########################------ ------#################################################################################------
 
---> Version: 1.2a
+--> Version: 1.2b
 
 --> Features:
 --> Prodictions in every skillshoot, also taking their hitboxes in consideration.
@@ -52,7 +52,7 @@ end
  
 function PluginOnTick()
     Checks()
-		CheckForms()
+    CheckForms()
     if Target then
       if Target and (AutoCarry.MainMenu.AutoCarry) and HumanForm then
         Neurotoxin()
@@ -142,36 +142,36 @@ function PluginOnDraw()
 end
 
  function Menu()
-	local HKE = string.byte("E")
-	AutoCarry.PluginMenu:addParam("sep", "-- Form Options --", SCRIPT_PARAM_INFO, "")
-	AutoCarry.PluginMenu:addParam("useR", "Change to Spider Form", SCRIPT_PARAM_ONOFF, true)
-	AutoCarry.PluginMenu:addParam("useRs", "Change to Human Form", SCRIPT_PARAM_ONOFF, false)
-	AutoCarry.PluginMenu:addParam("sepm", "-- KS Options --", SCRIPT_PARAM_INFO, "")
-	AutoCarry.PluginMenu:addParam("KS", "KS - Neurotoxin/Venomous Bite", SCRIPT_PARAM_ONOFF, true)
+  local HKE = string.byte("E")
+  AutoCarry.PluginMenu:addParam("sep", "-- Form Options --", SCRIPT_PARAM_INFO, "")
+  AutoCarry.PluginMenu:addParam("useR", "Change to Spider Form", SCRIPT_PARAM_ONOFF, true)
+  AutoCarry.PluginMenu:addParam("useRs", "Change to Human Form", SCRIPT_PARAM_ONOFF, false)
+  AutoCarry.PluginMenu:addParam("sepm", "-- KS Options --", SCRIPT_PARAM_INFO, "")
+  AutoCarry.PluginMenu:addParam("KS", "KS - Neurotoxin/Venomous Bite", SCRIPT_PARAM_ONOFF, true)
   AutoCarry.PluginMenu:addParam("sep1", "-- Autocarry Options --", SCRIPT_PARAM_INFO, "")
-	AutoCarry.PluginMenu:addParam("stunC", "Only W stunned targets", SCRIPT_PARAM_ONOFF, false)
-	AutoCarry.PluginMenu:addParam("sepH", "[Human Form]", SCRIPT_PARAM_INFO, "")
+  AutoCarry.PluginMenu:addParam("stunC", "Only W stunned targets", SCRIPT_PARAM_ONOFF, false)
+  AutoCarry.PluginMenu:addParam("sepH", "[Human Form]", SCRIPT_PARAM_INFO, "")
   AutoCarry.PluginMenu:addParam("useQ", "Use - Neurotoxin", SCRIPT_PARAM_ONOFF, true)
   AutoCarry.PluginMenu:addParam("useW", "Use - Volatile Spiderling", SCRIPT_PARAM_ONOFF, true)
-	AutoCarry.PluginMenu:addParam("useE", "Use - Cacoon", SCRIPT_PARAM_ONOFF, true)
-	AutoCarry.PluginMenu:addParam("sepS", "[Spider Form]", SCRIPT_PARAM_INFO, "")
-	AutoCarry.PluginMenu:addParam("useQs", "Use - Venomous Bite", SCRIPT_PARAM_ONOFF, true)
+  AutoCarry.PluginMenu:addParam("useE", "Use - Cacoon", SCRIPT_PARAM_ONOFF, true)
+  AutoCarry.PluginMenu:addParam("sepS", "[Spider Form]", SCRIPT_PARAM_INFO, "")
+  AutoCarry.PluginMenu:addParam("useQs", "Use - Venomous Bite", SCRIPT_PARAM_ONOFF, true)
   AutoCarry.PluginMenu:addParam("useWs", "Use - Skittering Frenzy", SCRIPT_PARAM_ONOFF, true)
-	AutoCarry.PluginMenu:addParam("useEs", "Use - Rappel", SCRIPT_PARAM_ONOFF, true)
-	AutoCarry.PluginMenu:addParam("minRange", " Min. Distance - Rappel", SCRIPT_PARAM_SLICE, 500, 100, 1075, 0)
+  AutoCarry.PluginMenu:addParam("useEs", "Use - Rappel", SCRIPT_PARAM_ONOFF, true)
+  AutoCarry.PluginMenu:addParam("minRange", " Min. Distance - Rappel", SCRIPT_PARAM_SLICE, 500, 100, 1075, 0)
   AutoCarry.PluginMenu:addParam("sep2", "-- Mixed Mode Options --", SCRIPT_PARAM_INFO, "")
-	AutoCarry.PluginMenu:addParam("stunC2", "Only W stunned targets", SCRIPT_PARAM_ONOFF, true)
+  AutoCarry.PluginMenu:addParam("stunC2", "Only W stunned targets", SCRIPT_PARAM_ONOFF, true)
   AutoCarry.PluginMenu:addParam("useQ2", "Use - Neurotoxin", SCRIPT_PARAM_ONOFF, true)
   AutoCarry.PluginMenu:addParam("useW2", "Use - Volatile Spiderling", SCRIPT_PARAM_ONOFF, true)
-	AutoCarry.PluginMenu:addParam("useE2", "Use - Cacoon", SCRIPT_PARAM_ONOFF, true)
-	AutoCarry.PluginMenu:addParam("sep3", "-- Last Hit Options --", SCRIPT_PARAM_INFO, "")
-	AutoCarry.PluginMenu:addParam("qFarm", "Farm - Venomous Bite", SCRIPT_PARAM_ONOFF, true)
-	AutoCarry.PluginMenu:addParam("sep4", "-- Lane Clear Options --", SCRIPT_PARAM_INFO, "")
-	AutoCarry.PluginMenu:addParam("qClear", "Farm - Venomous Bite", SCRIPT_PARAM_ONOFF, true)
-	AutoCarry.PluginMenu:addParam("sep5", "-- Hotkey Options --", SCRIPT_PARAM_INFO, "")
-	AutoCarry.PluginMenu:addParam("useEkey", "Use - Rappel", SCRIPT_PARAM_ONKEYDOWN, false, HKE)
-	AutoCarry.PluginMenu:addParam("sep6", "-- Drawing Options --", SCRIPT_PARAM_INFO, "")
-	AutoCarry.PluginMenu:addParam("drawF", "Draw - Furthest Spell Available", SCRIPT_PARAM_ONOFF, true)
+  AutoCarry.PluginMenu:addParam("useE2", "Use - Cacoon", SCRIPT_PARAM_ONOFF, true)
+  AutoCarry.PluginMenu:addParam("sep3", "-- Last Hit Options --", SCRIPT_PARAM_INFO, "")
+  AutoCarry.PluginMenu:addParam("qFarm", "Farm - Venomous Bite", SCRIPT_PARAM_ONOFF, true)
+  AutoCarry.PluginMenu:addParam("sep4", "-- Lane Clear Options --", SCRIPT_PARAM_INFO, "")
+  AutoCarry.PluginMenu:addParam("qClear", "Farm - Venomous Bite", SCRIPT_PARAM_ONOFF, true)
+  AutoCarry.PluginMenu:addParam("sep5", "-- Hotkey Options --", SCRIPT_PARAM_INFO, "")
+  AutoCarry.PluginMenu:addParam("useEkey", "Use - Rappel", SCRIPT_PARAM_ONKEYDOWN, false, HKE)
+  AutoCarry.PluginMenu:addParam("sep6", "-- Drawing Options --", SCRIPT_PARAM_INFO, "")
+  AutoCarry.PluginMenu:addParam("drawF", "Draw - Furthest Spell Available", SCRIPT_PARAM_ONOFF, true)
   AutoCarry.PluginMenu:addParam("drawQ", "Draw - Neurotoxin/Venomous Bite", SCRIPT_PARAM_ONOFF, false)
   AutoCarry.PluginMenu:addParam("drawW", "Draw - Volatile Spiderling", SCRIPT_PARAM_ONOFF, false)
   AutoCarry.PluginMenu:addParam("drawE", "Draw - Cocoon/Rappel", SCRIPT_PARAM_ONOFF, false)
@@ -183,7 +183,7 @@ function Checks()
         EAble = (myHero:CanUseSpell(_E) == READY)
         RAble = (myHero:CanUseSpell(_R) == READY)
         Target = AutoCarry.GetAttackTarget()
-				Minion = AutoCarry.GetMinionTarget()
+        Minion = AutoCarry.GetMinionTarget()
 end
  
  function Neurotoxin()
@@ -201,7 +201,7 @@ function Spiderling()
 end  
 
 function Cacoon()
-        if EAble and AutoCarry.PluginMenu.useE then ProdictE:GetPredictionCallBack(Target, CastE) end
+        if EAble and AutoCarry.PluginMenu.useE and HumanForm then ProdictE:GetPredictionCallBack(Target, CastE) end
 end    
 
  function Neurotoxin2()
@@ -219,7 +219,7 @@ function Spiderling2()
 end 
 	
 function Cacoon2()
-        if EAble and AutoCarry.PluginMenu.useE then ProdictE:GetPredictionCallBack(Target, CastE) end
+        if EAble and AutoCarry.PluginMenu.useE and HumanForm then ProdictE:GetPredictionCallBack(Target, CastE) end
 end   
 	
 function SpiderFormC()
@@ -285,6 +285,3 @@ function PluginOnDeleteObj(obj)
   Stunned = false
  end
 end
-
---UPDATEURL=
---HASH=CEE4366A7E1A2F5D6B81F40AAEA1259F
