@@ -139,6 +139,7 @@ function Checks()
 	RReady = (myHero:CanUseSpell(_R) == READY)
 	Target = AutoCarry.GetAttackTarget()
 	Minion = AutoCarry.GetMinionTarget()
+	if myHero.dead then wUsed = false end
 end
  
 function KSQ()
