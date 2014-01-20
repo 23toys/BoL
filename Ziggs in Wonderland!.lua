@@ -268,7 +268,7 @@ function CastE(unit, pos, spell)
 end
 
 function CastR(unit, pos, spell)
-        if if GetDistance(pos) < rRange then
+        if GetDistance(pos) < rRange then
           Packet('S_CAST', { spellId = _R, fromX = pos.x, fromY = pos.z}):send()
         end
 end
