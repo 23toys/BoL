@@ -31,7 +31,7 @@ local wUsed = false
 local QReady, WReady, EReady, RReady = false, false, false, false
 	
 local Prodict = ProdictManager.GetInstance()
-local ProdictQ = Prodict:AddProdictionObject(_Q, 1000, 1900, 0.250, 80)
+local ProdictQ = Prodict:AddProdictionObject(_Q, 1000, 1900, 0.250, 60)
 local ProdictQCol = nil
 local ProdictQFastCol = nil
 
@@ -249,6 +249,6 @@ function RebornCheck()
 		PrintChat("<font color='#FFFFFF'>>> Mundo Corp.: Fast Collision Loaded!</font>")
 	else
 		require "Collision"
-		ProdictQCol = Collision(qRange, 1900, 0.250, 80)
+		ProdictQCol = Collision(qRange, 1900, 0.250, 60)
 		PrintChat("<font color='#FFFFFF'>>> Mundo Corp.: Normal Collision Loaded!</font>") end
 end
